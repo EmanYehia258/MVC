@@ -1,0 +1,60 @@
+﻿@model LasttaskMVC.Models.User
+
+@{
+    ViewBag.Title = "insert";
+}
+
+
+<style>
+    form {
+        text-align: center;
+        background-color: darkkhaki;
+        margin-top: 50px;
+        padding-top: 20px;
+    }
+    /*input{
+        margin-left:5%;
+    }*/
+    label {
+        width: 150px;
+    }
+
+    h2 {
+        font-weight: 500;
+    }
+
+    #cancel {
+        margin-left: 20px;
+    }
+
+    button {
+        margin-top: 20px;
+        border-radius: 20px;
+        width: 100px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<form action="/Home/insert" class="container" >
+    <label>Name:</label>
+    <input name="name" type="text" />
+    <br />
+    <label>Email:</label>
+    <input name="email" type="email" />
+    <br />
+    <label>Birth Date:</label>
+    <input name="birthdate" type="date" />
+    <br />
+    <label>Phone:</label>
+    <input name="phone" type="number" />
+    <br />
+    <label>Password:</label>
+    <input name="password" type="password" />
+    <br />
+    <label>Photo:</label>
+    <input name="photo" type="file" />
+    <br />
+    <button type="submit"> Register</button>
+    <button formaction="/Home/login">Login</button>
+</form>
+

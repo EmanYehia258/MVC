@@ -1,0 +1,75 @@
+﻿@model List<LasttaskMVC.Models.Product>
+<div class="container ">
+
+    @foreach (var item in Model.GroupBy(a => a.CategoryID))
+    {
+        <p style="text-align:center;font-size:larger;margin:10px;margin-left:-30px;background-color:#343a40;color:white"> @item.FirstOrDefault().Category.CategoryName</p>
+        <div class="row" style="margin-left:20px">
+           
+            @foreach (var itemm in item)
+            {
+            <div class="card col-md-4" onclick="~/Controllers/Products/Details/@itemm.ProductID">
+                <p class="name">@itemm.ProductName</p>
+                <p class="com">@itemm.Supplier.CompanyName</p>
+                <p class="price">@itemm.UnitPrice $</p>
+                <div class="main">
+                    <form id="rating-form">
+                        <span class="rating-star">
+                            <input type="radio" name="rating" value="5"><span class="star"></span>
+
+                            <input type="radio" name="rating" value="4"><span class="star"></span>
+
+                            <input type="radio" name="rating" value="3"><span class="star"></span>
+
+                            <input type="radio" name="rating" value="2"><span class="star"></span>
+
+                            <input type="radio" name="rating" value="1"><span class="star"></span>
+                        </span>
+                    </form>
+                   
+                </div>
+                <button>Add to Card</button>
+            </div>
+            }
+        </div>
+        
+    }
+
+
+
+
+
+</div>
+<style>
+.card {
+  
+  box-shadow: 0 8px 8px 0 rgba(173, 212, 118, 0.50);
+  max-width: 300px;
+  margin-bottom:15px;
+  padding-bottom:15px;
+  /*padding:15px;*/
+  text-align: center;
+  font-family: arial;
+}
+.name{
+    color:dodgerblue;
+    /*font-size:larger;*/
+}
+.com{
+    /*font-size:large;*/
+    color:cadetblue;
+}
+.price{
+    color:gray;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 4px 8px 0 aquamarine;
+}
+button{
+    border-radius:15px;
+    width:150px;
+    margin-left:15%
+}
+</style>

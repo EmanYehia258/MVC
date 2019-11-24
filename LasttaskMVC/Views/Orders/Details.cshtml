@@ -1,0 +1,90 @@
+﻿@model LasttaskMVC.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <div class="container">
+        <div>
+          <label style="font-weight:bolder">OrderDate : </label> 
+            
+            @Html.DisplayFor(model => model.OrderDate)
+        </div>
+            
+        
+
+       <div>
+           <label style="font-weight:bolder">RequiredDate : </label>
+           @Model.RequiredDate
+       </div>
+            
+ 
+
+       
+
+        <div>
+           <label  style="font-weight:bolder">ShippedDate :</label> 
+            @Html.DisplayFor(model => model.ShippedDate)
+        </div>
+
+      
+
+        <div>
+            <label  style="font-weight:bolder">Freight :</label>
+            @Html.DisplayFor(model => model.Freight)
+        </div>
+
+        
+
+        <div>
+            <label  style="font-weight:bolder">ShipName :</label>  
+            @Html.DisplayFor(model => model.ShipName)
+        </div>
+
+        
+        <div>
+            <label style="font-weight:bolder">ShipAddress :</label>
+            @Html.DisplayFor(model => model.ShipAddress)
+        </div>
+          <div>
+            <label style="font-weight:bolder">ShipCity :</label>
+            @Html.DisplayFor(model => model.ShipCity)
+        </div>
+        <div>
+        <label style="font-weight:bolder">ShipRegion :</label>
+        @Html.DisplayFor(model => model.ShipRegion)
+        </div>
+        <div>
+            <label style="font-weight:bolder">ShipPostalCode :</label>
+            @Html.DisplayFor(model => model.ShipPostalCode)
+        </div>
+        
+        <div>
+            <label style="font-weight:bolder">ShipCountry :</label>
+            @Html.DisplayFor(model => model.ShipCountry)
+        </div>
+        <div>
+            <label style="font-weight:bolder">CompanyName :</label>
+            @Html.DisplayFor(model => model.Customer.CompanyName)
+        </div>
+        <div>
+            <label style="font-weight:bolder">LastName :</label>
+            @Html.DisplayFor(model => model.Employee.LastName)
+        </div>
+        <div>
+            <label style="font-weight:bolder">CompanyName :</label>
+            @Html.DisplayFor(model => model.Shipper.CompanyName)
+        </div>
+
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

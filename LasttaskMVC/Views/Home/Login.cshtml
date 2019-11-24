@@ -1,0 +1,46 @@
+﻿@model LasttaskMVC.Models.User
+
+@{
+    ViewBag.Title = "login";
+}
+<style>
+    form {
+        text-align: center;
+        background-color:burlywood;
+        margin-top: 100px;
+        padding-top: 50px;
+    }
+    /*input{
+        margin-left:5%;
+    }*/
+    label {
+        width: 150px;
+    }
+
+    h2 {
+        font-weight: 500;
+    }
+
+    #cancel {
+        margin-left: 20px;
+    }
+
+    button {
+        margin-top: 20px;
+        border-radius: 20px;
+        width: 100px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<form method="post">
+    <label>Email:</label>
+    <input name="email" type="email" />
+    <br />
+    <label>Password:</label>
+    <input name="pasword" type="password" />
+    <br />
+    <button formaction="/Home/Login?email=email$pasword=pasword" type="submit">Login</button>
+    <button formaction="/Home/Index" type="submit">Cancel</button>
+</form>
+
